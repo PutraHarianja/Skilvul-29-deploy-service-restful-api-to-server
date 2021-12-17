@@ -113,5 +113,19 @@ class UserController {
             status: 400
         });
     }
+    static getwelcome = (req, res) => {
+        res.status(200).send({
+            status: 200,
+            message: 'Welcome to My User API',
+        });
+    }
+    catch(error) {
+        console.log(error)
+        return res.status(400).send({
+            message: 'Unable to find data',
+            errors: error,
+            status: 400
+        });
+    }
 }
 module.exports = UserController
